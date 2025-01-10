@@ -15,7 +15,7 @@ namespace SampleMain
 {
     public partial class MainForm : Form
     {
-        NSocketEx listensocket = new NSocketEx(2, 0, 2);
+        NSocketEx listensocket = new NSocketEx(2, 0, 2, true);
         Point ShowFormPoint = new Point(-1, -1);
 
         public MainForm()
@@ -53,7 +53,7 @@ namespace SampleMain
 
         private void btn_connect_Click(object sender, EventArgs e)
         {
-            NSocketEx socket = new NSocketEx(2, 0, 2);
+            NSocketEx socket = new NSocketEx(2, 0, 2, true);
             socket.OnExceptionEvent += OnException;
             socket.OnConnectEvent += OnConnect;
             socket.OnDisConnectEvent += OnDisConnect;

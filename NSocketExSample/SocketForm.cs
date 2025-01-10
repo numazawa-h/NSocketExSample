@@ -86,7 +86,7 @@ namespace SampleMain
         private void btn_send_Click(object sender, EventArgs e)
         {
             ByteArray comm_dat = new ByteArray(txt_sendData.Text);
-            ByteArray comm_hed = new ByteArray((UInt16)comm_dat.Length());
+            ByteArray comm_hed = new ByteArray((UInt16)(comm_dat.Length()+2));    // ヘッダ長2バイトを加算
             _Socket.Send(comm_hed.GetData(), comm_dat.GetData());
         }
     }
